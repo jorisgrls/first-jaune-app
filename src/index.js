@@ -14,6 +14,8 @@ app.get("/api/wilder", wilderController.findAll)
 
 app.post("/api/wilder", wilderController.create);
 
+app.put("/api/wilder/:id", wilderController.update)
+
 app.delete("/api/wilder/:id", wilderController.delete)
 
 

@@ -7,4 +7,11 @@
 
 # GET http://localhost:3000/api/wilder
 
-DELETE http://localhost:3000/api/wilder/28
+# DELETE http://localhost:3000/api/wilder/28
+
+PUT http://localhost:3000/api/wilder/27
+Content-Type: application/json
+
+{
+    "name": "Jane Doe"
+}

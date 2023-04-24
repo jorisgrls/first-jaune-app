@@ -34,5 +34,18 @@ module.exports = {
             .catch(()=>{
                 res.send("Error while deleting wilder");
             })
+    },
+    update: (req, res) => {
+        const id = req.params.id;
+        const updatedFields = req.body;
+        dataSource
+            .getRepository(Wilder)
+            .update(id, updatedFields)
+            .then(()=> {
+                res.send("Updated wilder");
+            })
+            .catch(()=>{
+                res.send("Error while updating wilder");
+            })
     }
 };
