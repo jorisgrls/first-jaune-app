@@ -23,5 +23,16 @@ module.exports = {
             .catch(()=>{
                 res.send("Error while fetching wilders");
             })
+    },
+    delete: (req, res) => {
+        dataSource
+            .getRepository(Wilder)
+            .delete(req.params.id)
+            .then(()=> {
+                res.send("Deleted wilder");
+            })
+            .catch(()=>{
+                res.send("Error while deleting wilder");
+            })
     }
 };

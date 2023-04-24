@@ -14,6 +14,9 @@ app.get("/api/wilder", wilderController.findAll)
 
 app.post("/api/wilder", wilderController.create);
 
+app.delete("/api/wilder/:id", wilderController.delete)
+
+
 const start = async () => {
   await dataSource.initialize();
   app.listen(3000, () => console.log("Server started on 3000"));
