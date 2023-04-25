@@ -1,6 +1,7 @@
 const express = require("express");
 const dataSource = require("./utils").dataSource;
 const wilderController = require("./controller/wilder");
+const skillController = require("./controller/skill");
 
 const app = express();
 
@@ -11,12 +12,16 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/wilder", wilderController.findAll)
-
 app.post("/api/wilder", wilderController.create);
-
 app.put("/api/wilder/:id", wilderController.update)
-
 app.delete("/api/wilder/:id", wilderController.delete)
+
+app.get("/api/skill", skillController.findAll)
+app.post("/api/skill", skillController.create);
+app.put("/api/skill/:id", skillController.update)
+app.delete("/api/skill/:id", skillController.delete)
+
+app.post("/api/addSkill", wilderController.addSkill)
 
 
 const start = async () => {
